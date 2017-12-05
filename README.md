@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+# Welcome to Huffman Encoding
 
-You can use the [editor on GitHub](https://github.com/AidanFairman/HuffmanEncoding/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This project was a school assignment that I took way too far.
+I took and threaded this assignment, even though it is pretty unneeded.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The compression part of the algorithm is a producer-consumer model, where one thread reads the document and finds the encoding for the current byte, and puts it in a queue. The consumer, at the same time, consumes these encodings by doing bit shifting and writing out every byte. 
 
-### Markdown
+Decompression is not multi-threaded. It builds the encoding table, and then decompresses all on the same thread.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Compression is actually a bit slower than decompression, and this is probably due to the way the threads sleep and wake up. The reason I did the threading was not really for performance gain, but more for the challenge of making it work.
 
-```markdown
-Syntax highlighted code block
+There is a usable executable right in the root folder of this repository, as well as a txt version of Leo Tolstoy's "War and Peace" for testing purposes. 
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AidanFairman/HuffmanEncoding/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The algorithm will compress documents down to about 50% of their normal size.
