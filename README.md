@@ -9,7 +9,7 @@ The algorithm will compress documents down to about 50% of their normal size.
 
 ### Try it out
 
-There is a usable executable right in the root folder of this repository, as well as a txt version of Leo Tolstoy's "War and Peace" for testing purposes. 
+There is a usable executable right in the [root folder](https://github.com/AidanFairman/HuffmanEncoding) of this repository, as well as a txt version of Leo Tolstoy's "War and Peace" for testing purposes. 
 
 ### How does it work
 
